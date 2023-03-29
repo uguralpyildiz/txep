@@ -1,0 +1,183 @@
+
+
+@media only screen and (max-width: 1200px) {
+     
+    iframe{
+        border-radius: 0;
+    }    
+}
+
+@media only screen and (min-width: 998px) {
+    .navbar {
+        position: fixed;
+            left: 0 !important;
+        }
+    .overlay{
+        display: none !important;
+    }    
+}
+
+@media only screen and (max-width: 998px) {
+    .contact-container{
+        background: #fff;
+    }
+    .navbar-m {
+            display: flex;
+        }
+
+    .logo{
+        padding: 15px;
+      
+    }
+.navbar{
+    position: fixed;
+    top: 0;
+    left: -500px;
+    width: 300px;
+    height: 100vh;
+
+}
+.navbar-co{
+    display: block;
+    flex-direction: column;
+}
+.navbar-co a{
+    display: block;
+    z-index: 0;
+    padding: 20px;
+}
+.navbar-co a::before{
+    z-index: -1;
+    background: #00000080;
+    border-radius: 0;
+}
+.navbar-co a:hover::before {
+    background: #00000080;
+    height: 100%;
+}
+.header{
+    text-align: center;
+    padding:0px 5px;
+    margin: 20px 0;
+}
+.header h1{
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+}
+.header-p{
+    font-size:24px !important;
+}
+.header-p-alt {
+    font-size: 16px;
+}
+.p{font-size: 16px;}
+
+  .swiper {
+      border-radius: 0px;
+
+  }
+
+.product-content {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    width: 35%;
+
+}
+.section-nav{
+    flex-direction: column;
+}
+.product-content{
+    width: 100%;
+}
+.header-p{
+    border-radius: 5px;
+ 
+}
+.header-p,.header-p-alt{
+    text-align: center;
+}
+.product-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+}
+
+@media only screen and (max-width: 768px) {
+    .product-content {
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        }
+    .box {
+        width: 70%;
+        margin:10px auto;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+      p {
+            font-size: 13px;
+        }
+               .footer-company-about .p{
+                font-size: 14px;
+               }
+    .footer-distributed {
+            padding: 25px 10px;
+        }
+    .product-content {
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .box {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 408px) {
+    .product-content {
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .box {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+
+@media only screen and (max-width: 308px) {
+    .navbar{
+        width: 250px;
+    }
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1200px) {
+
+    .footer-distributed {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+
+}
