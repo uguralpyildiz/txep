@@ -1,3 +1,147 @@
+const nameInput = document.querySelector(".c-name")
+const areaContainer = document.querySelectorAll(".area-container")
+const emailInput = document.querySelector(".c-email")
+const errMessage = document.querySelectorAll(".errmessage")
+const textareaInput = document.querySelector(".textarea")
+const submitCont = document.querySelector("#submitC");
+const downloadCv = document.querySelector("#downloadCv");
+const downloadText = document.querySelector(".download-text");
+const submitContText = document.querySelector(".submit-text");
+const spinnerAnim = document.querySelector(".spinner-anim");
+const selectElement = document.getElementById("subject");
+const selecEl = document.querySelector(".select-err")
+
+
+function validate(email) {
+    var emailValid = /^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/;
+    return emailValid.test(email);
+}
+selectElement.addEventListener("input", () => {
+    selecEl.innerHTML = ""
+})
+
+submitCont.addEventListener("click", () => {
+    
+    
+    for (let i = 0; i < areaContainer.length; i++) {
+        
+        if (nameInput.value.trim().length < 2 || validate(emailInput.value) === false || textareaInput.value.trim().length < 10 || selectElement.value === "subject") {
+            areaContainer[i].classList.add("error")
+            errMessage[i].style.display = "block";
+            if (nameInput.value.trim().length < 1) {
+
+                errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name!";
+            }
+            if (emailInput.value.trim().length < 1) {
+
+                errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know where to reach you!";
+            }
+            if (textareaInput.value.trim().length < 1) {
+
+                errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
+            }
+            if (nameInput.value.trim().length > 2) {
+                areaContainer[0].classList.remove("error")
+                errMessage[0].style.display = "none";
+            }
+            if (validate(emailInput.value) === true) {
+                areaContainer[1].classList.remove("error")
+                errMessage[1].style.display = "none";
+            }
+            if (textareaInput.value.trim().length > 10) {
+                areaContainer[2].classList.remove("error")
+                errMessage[2].style.display = "none";
+            }
+           
+            if (selectElement.value === "subject") {
+                selecEl.innerHTML = "<i class='fa-solid fa-circle-info'></i> please select";
+            }
+            submitCont.classList.add("shake")
+            setTimeout(() => {
+                submitCont.classList.remove("shake")
+            }, 400);
+
+        } else if (validate(emailInput.value) === true) {
+            submitCont.classList.remove("shake")
+            areaContainer[i].classList.remove("error")
+            errMessage[i].style.display = "none";
+            submitContText.style.top = "-100px";
+            submitCont.style.pointerEvents = "none";
+            setTimeout(() => {
+                submitCont.innerHTML = '<span class="spinner-anim"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></span>'
+            }, 250);
+
+            var nameValue = nameInput.value;
+
+            setTimeout(() => {
+                submitCont.classList.add("okbtn")
+                submitCont.innerHTML = '<span class="download-text"><i class="fa-solid fa-check"></i>Thank You!</span>'
+                nameInput.value = "";
+                emailInput.value = "";
+                textareaInput.value = "";
+            }, 2500);
+
+            setTimeout(() => {
+                submitCont.classList.remove("okbtn")
+                submitCont.innerHTML = 'SUBMIT'
+                submitCont.style.pointerEvents = "auto";
+            }, 7000);
+
+        }
+    }
+
+})
+
+
+
+nameInput.addEventListener("input", () => {
+
+    if (nameInput.value.trim().length > 2) {
+        areaContainer[0].classList.remove("error")
+        errMessage[0].style.display = "none";
+    }
+    if (nameInput.value.trim().length <= 2) {
+        areaContainer[0].classList.add("error")
+        errMessage[0].style.display = "block";
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>Are you sure it's a name?";
+    }
+    if (nameInput.value.trim().length < 1) {
+        errMessage[0].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know your name!";
+    }
+})
+
+emailInput.addEventListener("input", () => {
+
+    if (validate(emailInput.value) === true) {
+        areaContainer[1].classList.remove("error")
+        errMessage[1].style.display = "none";
+    }
+    if (validate(emailInput.value) === false) {
+        areaContainer[1].classList.add("error")
+        errMessage[1].style.display = "block";
+        errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>Uh oh, that doesn't look like an email address...";
+    }
+    if (emailInput.value.trim().length < 1) {
+        errMessage[1].innerHTML = "<i class='fa-solid fa-circle-info'></i>I need to know where to reach you!";
+    }
+
+})
+
+textareaInput.addEventListener("input", () => {
+    errMessage[2].style.color = "";
+    if (textareaInput.value.trim().length > 10) {
+        areaContainer[2].classList.remove("error")
+        errMessage[2].style.display = "none";
+    }
+    if (textareaInput.value.trim().length <= 10) {
+        areaContainer[2].classList.add("error")
+        errMessage[2].style.display = "block";
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>Message too short!";
+    }
+    if (textareaInput.value.trim().length < 1) {
+        errMessage[2].innerHTML = "<i class='fa-solid fa-circle-info'></i>You need to send me a message!";
+    }
+})
 
 
 const navSet = document.querySelector(".navbar");
