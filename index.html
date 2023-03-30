@@ -72,7 +72,7 @@
     
                     </div>
     
-                    <button class="download-cv" href="#contact">
+                    <button class="lang-op" href="#contact">
                         <i class="fa-solid fa-globe"></i>English (EN)
                         <div class="language">
                             <!-- <a href="#">English</a> -->
@@ -365,53 +365,85 @@
             <div class="form-title">
                 Want to get more information? Contact us by using the form or call directly for more info
             </div>
-            <form action="#" method="POST">
-                <div class="form-l">
-                    <input type="text" id="name" name="name" required placeholder="NAME"><br><br>
+        <div class="container-c">
+            <div class="contact-form">
+                <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+                <div class="contact-form-flex-r">
+                    <div class="form-container">
+                        <form class="form-contact" action="#" method="POST" target="dummyframe" novalidate>
+                            <div class="form-opt">
+                                <label>NAME <span>*</span></label>
+                                <div class="area-container">
+                                    <input class="c-name" minlength="3" autocomplete="off" type="name" name="name" required
+                                        placeholder="Name">
+                                    <div class="area"></div>
+                                    <div class="errmessage-cont">
+                                        <div class="errmessage"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-opt">
+                                <label>E-MAIL <span>*</span></label>
+                                <div class="area-container">
+                                    <input class="c-email" type="email" autocomplete="off" name="email" required
+                                        placeholder="texep@ch.com">
+                                    <div class="area"></div>
+                                    <div class="errmessage-cont">
+                                        <div class="errmessage"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-opt">
+                                <label>SUBJECT <span>*</span></label>
+                               
+                                <div class="select">
+                                    <select id="subject" required>
+                                        <option value="subject" selected hidden>Subject</option>
+                                        <option value="Aquaviva Waterstation">Aquaviva Waterstation</option>
+                                        <option value="X-Curve">X-Curve Solar Panel</option>
+                                        <option value="Custom Solar Solution">Custom Solar Solution</option>
+                                        <option value="Other Inquiry">Other Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="errmessage-cont">
+                                    <div class="select-err">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-opt">
+                                <label>What's your message? <span>*</span></label>
+                                <div class="area-container">
+                                    <textarea class="textarea" minlength="10" name="message" required name="1" id="1" cols="30"
+                                        rows="10" placeholder="Message"></textarea>
+                                    <div class="area"></div>
+                                    <div class="errmessage-cont">
+                                        <div class="errmessage"></div>
+                                    </div>
+                                    
         
+                                </div>
+                            </div>
         
-                    <input type="email" id="email" name="email" required placeholder="E-MAIL"><br><br>
+                            <div class="btn-container">
+                                <div class="download-center w100 fade-r">
+                                    <button type="submit" href="#" id="submitC" class="download-cv form-sbtn w100">
+                                        <span class="submit-text">SUBMIT</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
         
-        
-                    <select id="subject" name="subject" required>
-                        <option value="" selected disabled hidden>SUBJECT</option>
-                        <option value="aquaviva-waterstation">Aquaviva Waterstation</option>
-                        <option value="x-curve-solar-panel">X-Curve Solar Panel</option>
-                        <option value="custom-solar-solution">Custom Solar Solution</option>
-                        <option value="other">Other Inquiry</option>
-                    </select><br><br>
-                </div>
-        
-                <div class="form-r">
-                    <textarea id="message" name="message" rows="5" cols="30" placeholder="MESSAGE" required></textarea><br><br>
-                    <div class="sub">
-                        <div></div>
-                        <div>
-                            <button type="submit">SUBMIT</button>
-                        </div>
                     </div>
-    
                 </div>
-                
-            </form>
-             <div class="alt-f">
-                <div class="img">
-                    <img width="250px" src="Texep_Logo_Web_Light.svg" alt="texep">
-                </div>
-                <div class="store">
-                   
-                        Download Mobile app for our website
-                    
-                    <div class="iconsas">
-                        <div class="appl">
-                            <a  href="#"><i style="font-size:24px" class="fa-brands fa-apple"></i>App Store</a>
-                        </div>
-                        <div class="appl">
-                            <a href="#"><i class="fa-brands fa-google-play"></i>Google Play</a>
-                        </div>
-                    </div>
-                </div>
-             </div>
+        
+        
+            </div>
+        </div>
+             
         </div>
         <div class="sec2">
             <div class="contact-info">
@@ -498,17 +530,39 @@
                 </div>
 
             </div>
-            <div class="contact-info">
-                <div class="copy">Copyright ® 2023 TEXEP Ltd All Rights Reserved VERSION 01 2023</div>
+
+            <div class="alt-f">
+                
+                <div class="store">
             
-            </div>
-            <div class="contact-info">
-                <div class="link-sect">
-                    <a href="#">TERMS AND CONDITIONS</a>|<a href="#">PRIVACY POLICY</a>|<a href="#">COOKIES POLICY</a>
+                    Download Mobile app for our website
+            
+                    <div class="iconsas">
+                        <div class="appl">
+                            <a href="#"><i style="font-size:24px" class="fa-brands fa-apple"></i>App Store</a>
+                        </div>
+                        <div class="appl">
+                            <a href="#"><i class="fa-brands fa-google-play"></i>Google Play</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
+                <div class="contact-info">
+                    <div class="copy">Copyright ® 2023 TEXEP Ltd All Rights Reserved VERSION 01.2023</div>
+                
+                </div>
+                <div class="contact-infos">
+                    <div class="link-sect">
+                        <a href="#">TERMS AND CONDITIONS</a>|<a href="#">PRIVACY POLICY</a>|<a href="#">COOKIES POLICY</a>
+                    </div>
+                    <div class="img-foot">
+                        <img width="250px" src="Texep_Logo_Web_Light.svg" alt="texep">
+                    </div>
+                </div>
+               
 </footer>
         <div class="overlay"></div>
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
